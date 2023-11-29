@@ -1,10 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 const API = import.meta.env.VITE_BASE_URL;
 
 const Show = () => {
   const { id } = useParams();
   const [bookmark, setBookmark] = useState({});
+
+  const navigate = useNavigate();
+
+  //handle delete
+
+  const handleDelete = () => {
+    fetch(`${API}/bookmarks/${id}`,{
+    method:"Delete",
+    headers: { "Content-Type": "application/json"
+    }}
+  )
+  .then(() => navigate("/bookmarks"))
+  .catch(err => console.error(err))
+}
 
   useEffect(() => {
     fetch(`${API}/bookmarks/${id}`)
@@ -24,6 +38,14 @@ const Show = () => {
         {" "}
         Go to: {bookmark.name}
       </a>
+
+      <div>
+        <button onClick={() => navigate(`/bookmarks/${id}/edit`)}>Edit</button>
+        
+        <button 
+        onClick={handleDelete}>
+            Delete</button>
+      </div>
     </div>
   );
 };

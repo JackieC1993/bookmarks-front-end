@@ -38,7 +38,7 @@ const NewBookmarkForm = () => {
       .then(() => navigate("/bookmarks"))
       .catch((err) => console.log(err));
   };
-  
+
 
   return (
     <div>
@@ -81,7 +81,7 @@ const NewBookmarkForm = () => {
             type="text"
             placeholder="Website Description"
             value={NewBookmark.description}
-            required
+            // required
             onChange={handleChange}
           />
           <br></br>
