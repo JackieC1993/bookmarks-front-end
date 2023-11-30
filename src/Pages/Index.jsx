@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom'
+import Bookmark from '../Components/Bookmark'
 
 const API = import.meta.env.VITE_BASE_URL
 
@@ -17,8 +17,8 @@ const Index = () => {
  }, [])
 
     return (
-        <div>
-            {bookmarks.map((bookmark) => <div key={bookmark.id}><Link to={`/bookmarks/${bookmark.id}`}>{bookmark.name}</Link></div>)}
+        <div className="bookmark-container">
+            {bookmarks.map((bookmark) => <Bookmark bookmark ={bookmark}/>)}
         </div>
     );
 };

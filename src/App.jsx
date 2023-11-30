@@ -15,7 +15,7 @@ import{ Routes, Route} from 'react-router-dom'
 function App() {
 
   return (
-    <>
+    <div id='container'>
     <Nav/>
     <main>
       <Routes>
@@ -26,7 +26,7 @@ function App() {
         <Route path="/bookmarks/:id/edit" element={<Edit />}/>
       </Routes>
     </main>
-    </>
+    </div>
   )
 }
 

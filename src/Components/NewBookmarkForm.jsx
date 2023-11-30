@@ -41,8 +41,9 @@ const NewBookmarkForm = () => {
 
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="new-form">
+      <form onSubmit={handleSubmit}
+      >
         <fieldset>
           <legend>Bookmark Info</legend>
           <label htmlFor="name">Name: </label>

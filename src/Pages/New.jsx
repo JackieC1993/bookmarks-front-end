@@ -3,7 +3,7 @@ import NewBookmarkForm from '../Components/NewBookmarkForm';
 
 const New = () => {
     return (
-        <div>
+        <div className="container-div">
             <h2>Add a new bookmark</h2>
             <NewBookmarkForm />
         </div>
